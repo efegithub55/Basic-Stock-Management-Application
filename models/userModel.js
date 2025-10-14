@@ -27,6 +27,7 @@ class User {
       return rows.map((user) => new User(user));
     } catch (err) {
       console.error("User.findById hata:", err);
+      throw err;
     }
   }
 
@@ -39,6 +40,7 @@ class User {
       return rows.map((user) => new User(user));
     } catch (err) {
       console.error("User.findByEmail hata:", err);
+      throw err;
     }
   }
 
@@ -51,18 +53,20 @@ class User {
       return rows.map((user) => new User(user));
     } catch (err) {
       console.error("User.findByUsername hata:", err);
+      throw err;
     }
   }
 
   // Kullanıcı ekleme metodu
   static async create(username, password, email) {
     try {
-      db.query(
+      await db.query(
         "INSERT INTO users (`username`,`password`,`email`) VALUES (?, ?, ?)",
         [username, password, email]
       );
     } catch (err) {
       console.error("User.create hata:", err);
+      throw err;
     }
   }
 
@@ -98,6 +102,7 @@ class User {
       await db.query("DELETE FROM users WHERE id = ?", [id]);
     } catch (err) {
       console.error("User.delete hata:", err);
+      throw err;
     }
   }
 }
