@@ -105,6 +105,21 @@ class User {
       throw err;
     }
   }
+
+  static async checkAuth(email, password) {
+    try {
+      console.log(email, password);
+      const user = await this.findByEmail(email);
+      if (!user) {
+        return false;
+      }
+      const isMatches = await bcrypt.compare(password, user[0].password);
+      return isMatches;
+    } catch (err) {
+      console.error("User.checkAuth hata:", err);
+      throw err;
+    }
+  }
 }
 
 module.exports = User;

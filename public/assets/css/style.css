@@ -171,6 +171,16 @@ a {
   text-decoration: none;
 }
 
+.bgjar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1051%26quot%3b)' fill='none'%3e%3cpath d='M67 1080L1147 0L2059 0L979 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient1052%26quot%3b)'%3e%3c/path%3e%3cpath d='M740.6 1080L1820.6 0L2038.1 0L958.1 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient1052%26quot%3b)'%3e%3c/path%3e%3cpath d='M1845 1080L765 0L556.5 0L1636.5 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient1053%26quot%3b)'%3e%3c/path%3e%3cpath d='M1240.4 1080L160.4000000000001 0L-136.5999999999999 0L943.4000000000001 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient1053%26quot%3b)'%3e%3c/path%3e%3cpath d='M1080.4983670190404 1080L1920 240.49836701904042L1920 1080z' fill='url(%26quot%3b%23SvgjsLinearGradient1052%26quot%3b)'%3e%3c/path%3e%3cpath d='M0 1080L839.5016329809596 1080L 0 240.49836701904042z' fill='url(%26quot%3b%23SvgjsLinearGradient1053%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1051'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1052'%3e%3cstop stop-color='rgba(246%2c 149%2c 0%2c 0.32)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(246%2c 149%2c 0%2c 0.32)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1053'%3e%3cstop stop-color='rgba(246%2c 149%2c 0%2c 0.32)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(246%2c 149%2c 0%2c 0.32)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  background-position: center;
+}
+
 /* Sidebar */
 
 #sidebar {
@@ -304,4 +314,70 @@ a.user-action span {
 
 a.user-action:hover {
   background: var(--orange-5);
+}
+
+.login-container {
+  width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--orange-10);
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.login-container h1 {
+  text-align: center;
+  color: var(--orange-10);
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.login-container p {
+  text-align: center;
+  color: var(--gray-10);
+}
+
+input {
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid var(--gray-10);
+  color: var(--orange-8);
+  transition: all 0.2s;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px var(--orange-6);
+  border-color: var(--orange-6);
+}
+
+input:not(:placeholder-shown) {
+  border-color: var(--orange-6);
+}
+
+button[type="submit"] {
+  padding: 8px 12px;
+  background: var(--orange-5);
+  border-radius: 4px;
+  border: none;
+  color: var(--gray-1);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button[type="submit"]:active {
+  scale: 0.98;
 }

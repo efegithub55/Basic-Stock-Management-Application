@@ -10,6 +10,7 @@ require("dotenv").config();
 // Router Includes
 
 const indexRouter = require("./routers/index.js");
+const loginRouter = require("./routers/login");
 
 // Express Config
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routers
 
 app.use("/", indexRouter);
+app.use("/login", loginRouter);
 
 // Server Start
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../components/Head", { title: "Invento | Giriş Yap"}) %>
+  <body>
+    <!-- Login Container -->
+    <div class="login-container">
+      <h1>Invento</h1>
+      <p>Stok & Envanter Yönetim Sistemi</p>
+      <form action="/login" method="post">
+        <input
+          type="email"
+          placeholder="E-posta adresi"
+          name="email"
+          autocomplete="off"
+        />
+        <input
+          type="password"
+          placeholder="Şifre"
+          name="password"
+          autocomplete="off"
+        />
+        <button type="submit">Giriş Yap</button>
+      </form>
+    </div>
+  </body>
+</html>
