@@ -18,13 +18,13 @@ exports.postLogin = async (req, res) => {
   }
 
   const token = jwt.sign(
-    { id: user.id, email: user.email },
+    { id: user.id, email: user.email, isAdmin: user.isAdmin },
     process.env.JWT_SECRET,
     { expiresIn: "1h" }
   );
 
   req.session.token = token;
-  req.session.user = { id: user.id, email: user.email };
+  req.session.user = { id: user.id, email: user.email, isAdmin: user.isAdmin };
 
   res.redirect("/");
 };

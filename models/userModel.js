@@ -2,11 +2,12 @@ const db = require("../config/database");
 const bcrypt = require("bcrypt");
 
 class User {
-  constructor({ id, username, email, password, createdAt }) {
+  constructor({ id, username, email, password, isAdmin, createdAt }) {
     this.id = id;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.isAdmin = isAdmin;
     this.createdAt = createdAt;
   }
 
