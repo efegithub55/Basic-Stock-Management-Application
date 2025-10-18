@@ -108,13 +108,14 @@ class User {
 
   static async checkAuth(email, password) {
     try {
-      console.log(email, password);
       const user = await this.findByEmail(email);
-      if (!user) {
+      if (!user || user.length === 0) {
         return false;
       }
       const isMatches = await bcrypt.compare(password, user[0].password);
-      return isMatches;
+      if (!isMatches) return false;
+
+      return user[0];
     } catch (err) {
       console.error("User.checkAuth hata:", err);
       throw err;
